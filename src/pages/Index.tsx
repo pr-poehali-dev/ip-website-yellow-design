@@ -5,35 +5,67 @@ import Icon from "@/components/ui/icon";
 const banks = [
   {
     id: 1,
-    name: "Альфа-Банк",
-    description: "Расчетно-кассовое обслуживание для ИП и ООО",
-    features: ["Бесплатное открытие счёта", "Интернет-банк и мобильное приложение", "Эквайринг с бесплатной установкой"],
-    reward: "до 15 000 ₽",
-    icon: "Landmark"
+    name: "Сбербанк",
+    description: "Крупнейший банк России для бизнеса",
+    features: ["Открытие счета онлайн", "СберБизнес приложение", "Большая сеть отделений"],
+    logo: "img/0e0a347c-d49c-4c7e-a6a8-a0a0db554ec8.jpg",
+    color: "bg-green-600"
   },
   {
     id: 2,
-    name: "ВТБ",
-    description: "Быстрое открытие счета для бизнеса",
-    features: ["Открытие счета за 25 минут", "Надежность крупного банка", "Широкий спектр услуг"],
-    reward: "до 12 000 ₽",
-    icon: "Building2"
+    name: "Альфа-Банк",
+    description: "Расчетно-кассовое обслуживание для ИП и ООО",
+    features: ["Бесплатное открытие счёта", "Интернет-банк и мобильное приложение", "Эквайринг с бесплатной установкой"],
+    logo: "img/0e0a347c-d49c-4c7e-a6a8-a0a0db554ec8.jpg",
+    color: "bg-red-600"
   },
   {
     id: 3,
-    name: "Совкомбанк",
-    description: "РКО для ИП и организаций онлайн",
-    features: ["Реквизиты счета за 3 минуты", "Помощь с бухгалтерией", "Тарифы от 0 рублей"],
-    reward: "до 10 000 ₽",
-    icon: "CreditCard"
+    name: "ВТБ",
+    description: "Быстрое открытие счета за 25 минут",
+    features: ["Открытие счета за 25 минут", "Надежность крупного банка", "Широкий спектр услуг"],
+    logo: "img/0e0a347c-d49c-4c7e-a6a8-a0a0db554ec8.jpg",
+    color: "bg-blue-600"
   },
   {
     id: 4,
     name: "Тинькофф Банк",
-    description: "Современное банковское обслуживание",
+    description: "100% цифровой банк для бизнеса",
     features: ["100% онлайн регистрация", "Бесплатное ведение счета", "Интеграция с 1С"],
-    reward: "до 20 000 ₽",
-    icon: "Smartphone"
+    logo: "img/0e0a347c-d49c-4c7e-a6a8-a0a0db554ec8.jpg",
+    color: "bg-yellow-500"
+  },
+  {
+    id: 5,
+    name: "Совкомбанк",
+    description: "РКО для ИП и организаций онлайн",
+    features: ["Реквизиты счета за 3 минуты", "Помощь с бухгалтерией", "Тарифы от 0 рублей"],
+    logo: "img/0e0a347c-d49c-4c7e-a6a8-a0a0db554ec8.jpg",
+    color: "bg-purple-600"
+  },
+  {
+    id: 6,
+    name: "Райффайзенбанк",
+    description: "Европейские стандарты обслуживания",
+    features: ["Персональный менеджер", "Премиальное обслуживание", "Международные операции"],
+    logo: "img/0e0a347c-d49c-4c7e-a6a8-a0a0db554ec8.jpg",
+    color: "bg-orange-600"
+  },
+  {
+    id: 7,
+    name: "Газпромбанк",
+    description: "Универсальный банк для корпоративных клиентов",
+    features: ["Корпоративные услуги", "Проектное финансирование", "Валютные операции"],
+    logo: "img/0e0a347c-d49c-4c7e-a6a8-a0a0db554ec8.jpg",
+    color: "bg-indigo-600"
+  },
+  {
+    id: 8,
+    name: "МТС Банк",
+    description: "Инновационные решения для бизнеса",
+    features: ["Мобильные платежи", "Быстрые переводы", "Цифровая экосистема"],
+    logo: "img/0e0a347c-d49c-4c7e-a6a8-a0a0db554ec8.jpg",
+    color: "bg-red-500"
   }
 ];
 
@@ -137,12 +169,14 @@ export default function Index() {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {banks.map((bank, index) => (
               <Card key={bank.id} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 bg-white/90 backdrop-blur-sm border-2 hover:border-primary/50 animate-fade-in" style={{animationDelay: `${index * 0.1}s`}}>
                 <CardHeader className="text-center pb-4">
-                  <div className="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                    <Icon name={bank.icon as any} size={32} className="text-white" />
+                  <div className={`w-20 h-20 ${bank.color} rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform shadow-lg`}>
+                    <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center">
+                      <span className="text-lg font-bold text-gray-800">{bank.name.charAt(0)}</span>
+                    </div>
                   </div>
                   <CardTitle className="text-xl font-heading text-darkGray">{bank.name}</CardTitle>
                   <CardDescription className="text-gray-600">{bank.description}</CardDescription>
@@ -156,15 +190,9 @@ export default function Index() {
                       </div>
                     ))}
                   </div>
-                  <div className="pt-4 border-t">
-                    <div className="text-center">
-                      <span className="text-lg font-bold text-primary">{bank.reward}</span>
-                      <p className="text-xs text-gray-500 mt-1">вознаграждение</p>
-                    </div>
-                    <Button className="w-full mt-3 bg-secondary hover:bg-secondary/90 text-darkGray font-medium">
-                      Выбрать банк
-                    </Button>
-                  </div>
+                  <Button className="w-full mt-4 bg-secondary hover:bg-secondary/90 text-darkGray font-medium">
+                    Выбрать банк
+                  </Button>
                 </CardContent>
               </Card>
             ))}
