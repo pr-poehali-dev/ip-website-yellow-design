@@ -246,17 +246,22 @@ export default function Index() {
             <h3 className="text-4xl md:text-5xl font-heading font-bold text-darkGray mb-6">
               Готовы начать свой бизнес?
             </h3>
-            <p className="text-xl text-darkGray/80 mb-8 leading-relaxed">
+            <p className="text-xl text-darkGray/80 mb-4 leading-relaxed">
               Получите бесплатную консультацию и узнайте, как быстро оформить ИП и открыть расчетный счет
             </p>
+            <div className="bg-white/20 backdrop-blur-sm rounded-lg px-6 py-3 inline-block mb-8">
+              <p className="text-lg font-semibold text-darkGray">
+                ✨ Все наши услуги абсолютно бесплатны!
+              </p>
+            </div>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Button size="lg" className="bg-white hover:bg-gray-100 text-darkGray font-semibold px-8 py-4 text-lg">
                 <Icon name="Phone" size={20} className="mr-2" />
                 Получить консультацию
               </Button>
               <Button size="lg" variant="outline" className="border-2 border-white text-darkGray hover:bg-white hover:text-darkGray font-semibold px-8 py-4 text-lg">
-                <Icon name="Calculator" size={20} className="mr-2" />
-                Рассчитать стоимость
+                <Icon name="Gift" size={20} className="mr-2" />
+                Узнать о бонусах
               </Button>
             </div>
           </div>
